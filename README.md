@@ -14,6 +14,8 @@ Here’s who’s hackin on this thing:
 
 So much data! These are the API endpoints, and should be prefixed with the API URL (to be determined).
 
+### /users/*
+
 **`/users/:id`**
 
 CRUD operations for users. Here’s an example response for a `GET` request:
@@ -54,6 +56,8 @@ A list of `classroom_periods` that the user subscribes to. Example:
   ...
 }]
 ```
+
+### /classroom_periods/*
 
 **`/classroom_periods/:id`**
 
