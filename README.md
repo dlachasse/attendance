@@ -134,38 +134,47 @@ Record for an individual student’s attendance on the specified date.
 
 ## Available Data
 
-``Table classroom_periods
+```
+Table classroom_periods
   "room":string
   "period":integer
   "teacher_id":integer
   "course_id":integer
   "created_at":datetime
   "updated_at":datetime
-end``
+end
+```
 
-``Table courses
+```
+Table courses
   "title":string
   "description":text
   "excerpt":text
   "created_at":datetime
   "updated_at":datetime
-end``
+end
+```
 
-``Table presences
+```
+Table presences
   "attended":boolean
   "schedule_id":integer
   "created_at":datetime
   "updated_at":datetime
-end``
+end
+```
 
-``Table schedules
+```
+Table schedules
   "classroom_period_id":integer
   "user_id":integer
   "created_at":datetime
   "updated_at":datetime
-end``
+end
+```
 
-``Table users
+```
+Table users
   "first_name":string
   "last_name":string
   "email":string
@@ -173,4 +182,5 @@ end``
   "role":integer
   "created_at":datetime
   "updated_at":datetime
-end``
+end
+```
