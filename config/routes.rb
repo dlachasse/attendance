@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'pages#index'
+
   scope :api, defaults: {format: 'json'} do
     resources :users, except: [:new, :edit]
     resources :classroom_periods, except: [:new, :edit]
