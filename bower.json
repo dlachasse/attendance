@@ -1,0 +1,12 @@
+{
+  "name": "attendance",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dlachasse/attendance",
+  "authors": [
+    "Cory Reed <swashcap@gmail.com>",
+    "David LaChasse <david.lachasse@gmail.com>"
+  ],
+  "description": "Front-end components for Attendance.",
+  "license": "MIT",
+  "private": true
+}
