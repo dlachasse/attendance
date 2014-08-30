@@ -1,0 +1,18 @@
+{
+  "name": "attendance",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dlachasse/attendance",
+  "authors": [
+    "Cory Reed <swashcap@gmail.com>",
+    "David LaChasse <david.lachasse@gmail.com>"
+  ],
+  "description": "Front-end components for Attendance.",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-sanitize": "~1.2.23",
+    "angular-ui-router": "~0.2.11",
+    "fastclick": "~1.0.3"
+  }
+}
