@@ -8,5 +8,11 @@
   ],
   "description": "Front-end components for Attendance.",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "angular": "~1.2.23",
+    "angular-sanitize": "~1.2.23",
+    "angular-ui-router": "~0.2.11",
+    "fastclick": "~1.0.3"
+  }
 }
