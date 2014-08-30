@@ -1,0 +1,2 @@
+class PresencesController < ApplicationController
+end
