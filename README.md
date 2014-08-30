@@ -131,3 +131,46 @@ List of attendances for the particular date.Example
 **`/classroom_periods/:id/attendance/:date/:student_id`**
 
 Record for an individual student’s attendance on the specified date.
+
+## Available Data
+
+`Table classroom_periods
+  string   "room"
+  integer  "period"
+  integer  "teacher&#95;id"
+  integer  "course&#95;id"
+  datetime "created&#95;at"
+  datetime "updated&#95;at"
+end`
+
+`Table courses
+  string   "title"
+  text     "description"
+  text     "excerpt"
+  datetime "created&#95;at"
+  datetime "updated&#95;at"
+end`
+
+`Table presences
+  boolean  "attended"
+  integer  "schedule&#95;id"
+  datetime "created&#95;at"
+  datetime "updated&#95;at"
+end`
+
+`Table schedules
+  integer  "classroom&#95;period&#95;id"
+  integer  "user&#95;id"
+  datetime "created&#95;at"
+  datetime "updated&#95;at"
+end`
+
+`Table users
+  string   "first&#95;name"
+  string   "last&#95;name"
+  string   "email"
+  string   "avatar"
+  integer  "role"
+  datetime "created&#95;at"
+  datetime "updated&#95;at"
+end`
