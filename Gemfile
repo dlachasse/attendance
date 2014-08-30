@@ -8,5 +8,7 @@ gem 'populator'
 gem 'faker'
 
 gem 'sass-rails',               '~> 4.0.3'
+gem 'angular-rails-templates',  '~> 0.1.2'
+
 
 # gem 'unicorn'
