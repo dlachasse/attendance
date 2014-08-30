@@ -28,6 +28,33 @@ CRUD operations for users. Here’s an example response for a `GET` request:
 }
 ```
 
+**`/users/:id/classroom_periods/`**
+
+A list of `classroom_periods` that the user subscribes to. Example:
+
+```json
+[{
+  "id": 3851730234,
+  "title": "Chemistry I: Introduction to Chemistry",
+  "room": "120A",
+  "period": 5,
+  "excert": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "description": "<p>Etiam quis libero sollicitudin, imperdiet libero sit amet, vestibulum augue.</p><p>Nulla eget nunc sit amet justo interdum tincidunt. Nulla arcu mi, blandit at euismod et, porttitor quis ligula. Ut sapien odio, pharetra eu quam non, tempus eleifend ipsum. Sed sed tristique quam. In porttitor ornare urna ut facilisis.</p>",
+  "teacher": {
+    "id": 29412518,
+    "name": "Pat Smith",
+    "email": "patsmith@school.com",
+    "avatar": "/public/avatars/pat-smith.jpg"
+  }
+}, {
+  "id": 78901738102,
+  "title": "English III",
+  "room": "10B",
+  "period": 4,
+  ...
+}]
+```
+
 **`/classroom_periods/:id`**
 
 Get all information for a single classroom period, including `Course` information, teacher and an array of students. Example response:
@@ -59,17 +86,21 @@ Get all information for a single classroom period, including `Course` informatio
 
 **`/classroom_periods/:id/attendance`**
 
-List of attendance dates.
+List of attendance dates:
 
 ```json
-{
-
-}
+[
+  "2014-09-02",
+  "2014-09-03",
+  "2014-09-04",
+  "2014-09-05",
+  ...
+]
 ```
 
-#### `/classroom_periods/:id/attendance/:date`
+**`/classroom_periods/:id/attendance/:date`**
 
-List of attendances for the particular date.
+List of attendances for the particular date.Example
 
 ```json
 [{
@@ -93,4 +124,6 @@ List of attendances for the particular date.
 }]
 ```
 
-##### `/classroom_periods/:id/attendance/:date/:user_id`
+**`/classroom_periods/:id/attendance/:date/:student_id`**
+
+Record for an individual student’s attendance on the specified date.
