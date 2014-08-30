@@ -1,0 +1,27 @@
+<div ng-include="'_navigation.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <img ng-src="student.avatar">
+      <h2>{{ student.name }}</h2>
+      <h5>Student</h5>
+      <a href="{{ student.email }}">
+        <span class="glyphicon glyphicon-envelope"></span>
+        <strong>{{ student.email }}</strong>
+      </a>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+          <a href="#" class="btn btn-default pull-left">
+              <span class="glyphicon glyphicon-arrow-left"></span>
+              Previous
+          </a>
+          <a href="#" class="btn btn-default pull-right">
+              Next
+              <span class="glyphicon glyphicon-arrow-right"></span>
+          </a>
+      </div>
+    </div>
+  </div>
+</div>

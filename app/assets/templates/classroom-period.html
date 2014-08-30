@@ -1,0 +1,15 @@
+<div ng-include="'_navigation.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div ng-repeat="student in students" class="student col-xs-4 col-sm-3 col-md-2">
+      <a ui-sref="student({id: student.id})">
+        <img ng-src="student.avatar">
+        <div class="student__content">
+          <h4>{{ student.name }}</h4>
+          <p class="bg-success"><span class="glyphicon glyphicon-ok"></span> Attended</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div><!-- .container -->
