@@ -7,4 +7,6 @@ gem 'pg'
 gem 'populator'
 gem 'faker'
 
+gem 'sass-rails',               '~> 4.0.3'
+
 # gem 'unicorn'
