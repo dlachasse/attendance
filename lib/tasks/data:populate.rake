@@ -34,7 +34,7 @@ namespace :data do
 			user.role = 0
 
 			Schedule.populate(6) do |schedule|
-				schedule.classroom_period_id = rand(0..15)
+				schedule.classroom_period_id = rand(1..15)
 				schedule.user_id = user.id
 
 				Presence.populate(6) do |presence|
