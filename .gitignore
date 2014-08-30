@@ -6,4 +6,4 @@ config/database.yml
 .DS_Store
 tmp/*
 
-app/assets/bower_components/
+app/assets/javascripts/vendor/
