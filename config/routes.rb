@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :api, defaults: {format: 'json'} do
+  scope :api, defaults: {format: 'json'} do
     resources :users, except: [:new, :edit]
     resources :classroom_periods, except: [:new, :edit]
     # resources :courses, except: [:new, :edit]
