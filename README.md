@@ -135,42 +135,42 @@ Record for an individual student’s attendance on the specified date.
 ## Available Data
 
 `Table classroom_periods
-  string   "room"
-  integer  "period"
-  integer  "teacher&#95;id"
-  integer  "course&#95;id"
-  datetime "created&#95;at"
-  datetime "updated&#95;at"
+    "room":string
+    "period":integer
+    "teacher_id":integer
+    "course_id":integer
+    "created_at":datetime
+    "updated_at":datetime
 end`
 
 `Table courses
-  string   "title"
-  text     "description"
-  text     "excerpt"
-  datetime "created&#95;at"
-  datetime "updated&#95;at"
+    "title":string
+    "description":text
+    "excerpt":text
+    "created_at":datetime
+    "updated_at":datetime
 end`
 
 `Table presences
-  boolean  "attended"
-  integer  "schedule&#95;id"
-  datetime "created&#95;at"
-  datetime "updated&#95;at"
+    "attended":boolean
+    "schedule_id":integer
+    "created_at":datetime
+    "updated_at":datetime
 end`
 
 `Table schedules
-  integer  "classroom&#95;period&#95;id"
-  integer  "user&#95;id"
-  datetime "created&#95;at"
-  datetime "updated&#95;at"
+    "classroom_period_id":integer
+    "user_id":integer
+    "created_at":datetime
+    "updated_at":datetime
 end`
 
 `Table users
-  string   "first&#95;name"
-  string   "last&#95;name"
-  string   "email"
-  string   "avatar"
-  integer  "role"
-  datetime "created&#95;at"
-  datetime "updated&#95;at"
+    "first_name":string
+    "last_name":string
+    "email":string
+    "avatar":string
+    "role":integer
+    "created_at":datetime
+    "updated_at":datetime
 end`
