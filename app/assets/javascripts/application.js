@@ -1,8 +1,8 @@
 /**
  *= require vendor/fastclick.js
- *= require vendor/angular.min.js
- *= require vendor/angular-sanitize.min.js
- *= require vendor/angular-ui-router.min.js
+ *= require vendor/angular.js
+ *= require vendor/angular-sanitize.js
+ *= require vendor/angular-ui-router.js
  *
  * Get all the Angular templates
  * (https://github.com/pitr/angular-rails-templates)
