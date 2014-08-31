@@ -1,7 +1,7 @@
-/**
- *= require_tree .
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import "base/defaults";
+
 @import "module/student-micro";
+@import "module/teacher-micro";
