@@ -12,7 +12,7 @@ namespace :data do
 			teach.first_name = Faker::Name.first_name
 			teach.last_name = Faker::Name.last_name
 			teach.email = Faker::Internet.email
-			teach.avatar = Faker::Internet.url
+			teach.avatar = "/img/kitten-#{Faker::Number.number(1)}.jpg"
 			teach.role = 1
 			course = 0
 
@@ -30,7 +30,7 @@ namespace :data do
 			user.first_name = Faker::Name.first_name
 			user.last_name = Faker::Name.last_name
 			user.email = Faker::Internet.email
-			user.avatar = Faker::Internet.url
+			user.avatar = "/img/kitten-#{Faker::Number.number(1)}.jpg"
 			user.role = 0
 
 			Schedule.populate(6) do |schedule|
