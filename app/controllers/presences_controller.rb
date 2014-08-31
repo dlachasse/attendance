@@ -1,13 +1,19 @@
 class PresencesController < ApplicationController
 
 	def show
-		@schedules = Schedule.where(classroom_period_id: params[:id]).pluck(:id)
+		@schedules = Schedule.where(classroom_period_id: params[:id]).presence
 		@attendance = Presence.where(schedule_id: @schedules)
-		@course = Course.find(ClassroomPeriod.find(params[:id]).course_id)
 		@attendance = @attendance.map do |a|
-			{ id: a.id, title: @course.title, recorded: a.created_at.strftime("%Y-%m-%d") }
+			{ recorded: a.created_at.strftime("%Y-%m-%d") }
 		end
 
 		respond_with @attendance.to_json
+	end
+
+	def by_date
+		@date = Time.parse("#{params[:date]}")
+		@schedules = ClassroomPeriod.find(params[:id]).schedules.pluck(:id)
+		@presences = Presence.where(schedule_id: @schedules).where(:created_at => @date.all_day)
+		respond_with @presences.to_json
 	end
 end
