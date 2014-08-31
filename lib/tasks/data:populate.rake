@@ -38,7 +38,7 @@ namespace :data do
 				schedule.user_id = user.id
 
 				Presence.populate(6) do |presence|
-					presence.attended = true
+					presence.attended = [true, false].sample
 					presence.schedule_id = schedule.id
 				end
 			end

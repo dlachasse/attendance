@@ -14,6 +14,9 @@ class PresencesController < ApplicationController
 		@date = Time.parse("#{params[:date]}")
 		@schedules = ClassroomPeriod.find(params[:id]).schedules.pluck(:id)
 		@presences = Presence.where(schedule_id: @schedules).where(:created_at => @date.all_day)
+		@presences = @presences.map do |p|
+			{ attended: p.attended, user: p.schedule.user, recorded: p.created_at.strftime("%Y-%m-%d") }
+		end
 		respond_with @presences.to_json
 	end
 
@@ -23,7 +26,9 @@ class PresencesController < ApplicationController
 		else
 			@date = Time.now
 		end
-		@presences = Presence.where(:created_at => @date.all_day)
+		@presences = Presence.where(:created_at => @date.all_day).map do |p|
+			{ attended: p.attended, user: p.schedule.user, recorded: p.created_at.strftime("%Y-%m-%d") }
+		end
 		respond_with @presences.to_json
 	end
 
