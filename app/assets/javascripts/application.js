@@ -52,7 +52,12 @@ angular.module('attendance', ['ngSanitize', 'ui.router', 'templates'])
         url: '/student/:id',
         templateUrl: 'student.html',
         controller: 'StudentCtrl'
-      });
+      })
+      .state('attendance', {
+        url: '/attendance',
+        templateUrl: 'new-attendance.html',
+        controller: 'NewAttendanceCtrl'
+      })
   }])
   .config(['$urlRouterProvider', function ($urlRouterProvider) {
     $urlRouterProvider
@@ -129,4 +134,9 @@ angular.module('attendance')
           $scope.courses = courses;
         });
     }
+  }]);
+
+angular.module('attendance')
+  .controller('NewAttendanceCtrl', ['$scope', function ($scope) {
+
   }]);
