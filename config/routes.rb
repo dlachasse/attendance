@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :classroom_periods, except: [:new, :edit]
     get '/users/:id/classroom_periods/', to: 'classroom_periods#schedule'
     get '/classroom_period/:id/', to: 'classroom_periods#listing'
+    get '/classroom_periods/:id/attendance', to: 'presences#show'
     # resources :courses, except: [:new, :edit]
     # resources :presences, except: [:new, :edit]
     # resources :schedules, except: [:new, :edit]
