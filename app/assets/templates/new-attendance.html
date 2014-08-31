@@ -2,11 +2,28 @@
 
 <div class="container">
   <div class="page-header">
-    <h1>Attendances <small>{{ attendancesDate }}</small></h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <h1>Attendances <small>{{ attendancesDate }}</small></h1>
+      </div>
+      <div class="col-xs-12 col-sm-6 text-right">
+        <br>
+        Filter:
+        <button ng-click="filterStatus = true" class="btn btn-success">
+          <span class="glyphicon glyphicon-ok"></span> Attended
+        </button>
+        <button ng-click="filterStatus = false" class="btn btn-danger">
+          <span class="glyphicon glyphicon-remove"></span> Missed
+        </button>
+        <button ng-click="filterStatus = ''" class="btn btn-default">
+          <span class="glyphicon glyphicon-minus"></span> Reset
+        </button>
+      </div>
+    </div>
   </div>
 
   <div class="row">
-    <div ng-repeat="record in attendances" class="col-xs-6 col-sm-4 col-md-3">
+    <div ng-repeat="record in attendances | filter: {attended: filterStatus}" class="col-xs-6 col-sm-4 col-md-3">
       <div class="attendance-record media">
         <a ui-sref="student({id: record.user.id})" class="pull-left">
           <img ng-src="{{ record.user.avatar }}" class="media-object img-rounded">
