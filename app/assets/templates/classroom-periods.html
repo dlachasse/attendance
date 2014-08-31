@@ -10,6 +10,13 @@
         <h2>{{ period.title }}</h2>
         <p>Period <strong>{{ period.period }}</strong></p>
         <p>Room: <strong>{{ period.room }}</strong></p>
+
+        <div class="media">
+          <img ng-src="{{ period.teacher.avatar }}" class="media-object img-rounded">
+          <div class="media-body">
+            <h4 class="media-heading">{{ period.teacher.first_name + ' ' + period.teacher.last_name }}</h4>
+          </div>
+        </div>
       </a>
     </div>
   </div>
