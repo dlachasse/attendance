@@ -20,6 +20,11 @@ angular.module('attendance', ['ngSanitize', 'ui.router', 'templates'])
         templateUrl: 'home.html',
         controller: 'HomeCtrl'
       })
+      .state('classroom-periods', {
+        url: '/classroom-periods',
+        templateUrl: 'classroom-periods.html',
+        controller: 'ClassroomPeriodsCtrl'
+      })
       .state('classroom-period', {
         url: '/classroom-period/:id',
         templateUrl: 'classroom-period.html',
@@ -45,6 +50,14 @@ angular.module('attendance')
   .controller('HomeCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.message = 'Hello';
   }]);
+
+angular.module('attendance')
+  .controller('ClassroomPeriodsCtrl', function ($scope, $http) {
+    $http.get('/api/classroom_periods')
+      .then(function (data) {
+        $scope.periods = data.data;
+      });
+  });
 
 angular.module('attendance')
   .controller('ClassroomPeriodCtrl', function ($scope) {
