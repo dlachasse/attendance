@@ -26,7 +26,7 @@ namespace :data do
 
 		end
 
-		User.populate(50) do |user|
+		User.populate(20) do |user|
 			user.first_name = Faker::Name.first_name
 			user.last_name = Faker::Name.last_name
 			user.email = Faker::Internet.email
@@ -37,7 +37,7 @@ namespace :data do
 				schedule.classroom_period_id = rand(1..15)
 				schedule.user_id = user.id
 
-				Presence.populate(6) do |presence|
+				Presence.populate(1) do |presence|
 					presence.attended = [true, false].sample
 					presence.schedule_id = schedule.id
 				end
