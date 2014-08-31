@@ -12,6 +12,10 @@
 
 'use strict';
 
+window.addEventListener('load', function() {
+  FastClick.attach(document.body);
+}, false);
+
 angular.module('attendance', ['ngSanitize', 'ui.router', 'templates'])
   .config(['$stateProvider', function ($stateProvider) {
     $stateProvider
