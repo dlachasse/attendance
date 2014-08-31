@@ -12,24 +12,21 @@
       </a>
     </div>
     <div class="col-xs-12 col-sm-8">
-      <div class="clearfix">
-          <a href="#" class="btn btn-default pull-left">
-              <span class="glyphicon glyphicon-arrow-left"></span>
-              Previous
-          </a>
-          <a href="#" class="btn btn-default pull-right">
-              Next
-              <span class="glyphicon glyphicon-arrow-right"></span>
-          </a>
-      </div>
+      <h2>Classes</h2>
 
-      <div ng-repeat="course in courses">
-        <a ui-sref="class.detail({id: course.id })">
-          <h2>{{ course.title }}</h2>
-          <p>Period: <strong>{{ course.period }}</strong>
-          <p>Course ID: <strong>{{ course.course_id }}</strong></p>
-          <p>Room: <strong>{{ course.room }}</strong></p>
-        </a>
+      <div ng-repeat="course in courses" class="row">
+        <div class="col-xs-12 col-sm-6">
+          <a ui-sref="class.detail({id: course.id })">
+            <h3>{{ course.title }}</h3>
+            <ul class="list-unstyled">
+              <li>Period: <strong>{{ course.period }}</strong></li>
+              <li>Room: <strong>{{ course.room }}</strong></li>
+            </ul>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <img src="/img/graph-2.png">
+        </div>
       </div>
     </div>
   </div>
