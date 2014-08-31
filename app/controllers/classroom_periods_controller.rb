@@ -16,7 +16,10 @@ class ClassroomPeriodsController < ApplicationController
 	end
 
 	def index
-		@classroom_periods = ClassroomPeriod.all
+		@cp = ClassroomPeriod.all
+		@classroom_periods = @cp.map do |cp|
+			{id: cp.id, title: Course.find(cp.course_id).title, period: cp.period, teacher: User.find(cp.teacher_id) }
+		end
 		respond_with @classroom_periods
 	end
 
