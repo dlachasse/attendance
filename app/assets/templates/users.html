@@ -7,7 +7,7 @@
 
   <div class="row">
     <div ng-repeat="user in users" class="user col-xs-6 col-sm-4 col-md-3">
-      <a ui-sref="student({id: user.id })">
+      <a ui-sref="users.detail({id: user.id })">
         <img ng-src="{{ user.avatar }}">
         <div class="user__content">
           <h4 class="user__name">{{ user.first_name + ' ' + user.last_name }}</h4>

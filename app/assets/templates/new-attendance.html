@@ -25,7 +25,7 @@
   <div class="row">
     <div ng-repeat="record in attendances | filter: {attended: filterStatus}" class="col-xs-6 col-sm-4 col-md-3">
       <div class="attendance-record media">
-        <a ui-sref="student({id: record.user.id})" class="pull-left">
+        <a ui-sref="users.detail({id: record.user.id})" class="pull-left">
           <img ng-src="{{ record.user.avatar }}" class="media-object img-rounded">
         </a>
         <div class="media-body">

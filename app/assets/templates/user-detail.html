@@ -11,7 +11,7 @@
         <strong>{{ user.email }}</strong>
       </a>
     </div>
-    <div class="col-xs-12 col-sm-8">
+    <div ng-if="user.role == 'student'" class="col-xs-12 col-sm-8">
       <h2>Classes</h2>
 
       <div ng-repeat="course in courses" class="row">

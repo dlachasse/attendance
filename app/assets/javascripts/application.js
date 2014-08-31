@@ -50,14 +50,19 @@ angular.module('attendance', ['ngSanitize', 'ui.router', 'templates'])
         controller: 'ClassDetailCtrl'
       })
       .state('users', {
+        abstract: true,
         url: '/users',
+        template: '<ui-view />'
+      })
+      .state('users.list', {
+        url: '',
         templateUrl: 'users.html',
         controller: 'UsersCtrl'
       })
-      .state('student', {
-        url: '/student/:id',
-        templateUrl: 'student.html',
-        controller: 'StudentCtrl'
+      .state('users.detail', {
+        url: '/:id',
+        templateUrl: 'user-detail.html',
+        controller: 'UserDetailCtrl'
       })
       .state('attendance', {
         url: '/attendance',
@@ -117,7 +122,7 @@ angular.module('attendance')
   }]);
 
 angular.module('attendance')
-  .controller('StudentCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
+  .controller('UserDetailCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
     // Get student records
     var studentId = $stateParams.id;
 
