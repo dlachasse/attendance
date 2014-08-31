@@ -56,15 +56,15 @@ angular.module('attendance')
   }]);
 
 angular.module('attendance')
-  .controller('ClassroomPeriodsCtrl', function ($scope, $http) {
+  .controller('ClassroomPeriodsCtrl', ['$scope', '$http', function ($scope, $http) {
     $http.get('/api/classroom_periods')
       .then(function (data) {
         $scope.periods = data.data;
       });
-  });
+  }]);
 
 angular.module('attendance')
-  .controller('ClassroomPeriodCtrl', function ($scope, $stateParams, $http) {
+  .controller('ClassroomPeriodCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
     $scope.message = 'Hello';
 
     var id = $stateParams.id;
@@ -77,10 +77,10 @@ angular.module('attendance')
           $scope.course = data.data;
         });
     }
-  });
+  }]);
 
 angular.module('attendance')
-  .controller('UsersCtrl', function ($scope, $http) {
+  .controller('UsersCtrl', ['$scope', '$http', function ($scope, $http) {
     $http.get('/api/users')
       .then(function (data) {
         var users = data.data.sort(function (a, b) {
@@ -94,10 +94,10 @@ angular.module('attendance')
 
         $scope.users = users;
       });
-  });
+  }]);
 
 angular.module('attendance')
-  .controller('StudentCtrl', function ($scope, $stateParams, $http) {
+  .controller('StudentCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
     // Get student records
     var studentId = $stateParams.id;
 
@@ -120,5 +120,4 @@ angular.module('attendance')
           $scope.courses = courses;
         });
     }
-
-  });
+  }]);
