@@ -137,6 +137,12 @@ angular.module('attendance')
   }]);
 
 angular.module('attendance')
-  .controller('NewAttendanceCtrl', ['$scope', function ($scope) {
+  .controller('NewAttendanceCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.attendancesDate = 'Today';
 
+    $http.get('/api/attendance')
+      .then(function (data) {
+        $scope.attendances = data.data;
+        console.log(data.data);
+      });
   }]);

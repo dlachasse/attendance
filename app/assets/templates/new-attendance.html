@@ -2,17 +2,25 @@
 
 <div class="container">
   <div class="page-header">
-    <h1>Today</h1>
+    <h1>Attendances <small>{{ attendancesDate }}</small></h1>
   </div>
 
   <div class="row">
-    <div ng-repeat="student in students" class="col-xs-6 col-sm-4 col-md-2">
-      <div ng-click="setAttendance(student.id)" class="student-micro">
-        <img ng-src="{{ student.avatar }}">
-        <div class="student-micro__content">
-          <h4 class="student-micro__name">{{ student.first_name + ' ' student.last_name }}</h4>
+    <div ng-repeat="record in attendances" class="col-xs-6 col-sm-4 col-md-3">
+      <div class="attendance-record media">
+        <a ui-sref="student({id: record.user.id})" class="pull-left">
+          <img ng-src="{{ record.user.avatar }}" class="media-object img-rounded">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading">{{ record.user.first_name + ' ' + record.user.last_name }}</h4>
+          <div ng-if="record.attended" class="text-success">
+            <span class="glyphicon glyphicon-ok"></span> Attended
+          </div>
+          <div ng-if="!record.attended" class="text-danger">
+            <span class="glyphicon glyphicon-remove"></span> Missed
+          </div>
         </div>
-      </div>
+      </div><!-- .media -->
     </div>
   </div><!-- .row -->
 </div><!-- .container -->
