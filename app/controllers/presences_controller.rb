@@ -10,10 +10,21 @@ class PresencesController < ApplicationController
 		respond_with @attendance.to_json
 	end
 
-	def by_date
+	def class_by_date
 		@date = Time.parse("#{params[:date]}")
 		@schedules = ClassroomPeriod.find(params[:id]).schedules.pluck(:id)
 		@presences = Presence.where(schedule_id: @schedules).where(:created_at => @date.all_day)
 		respond_with @presences.to_json
 	end
+
+	def by_date
+		if params[:date]
+			@date = Time.parse("#{params[:date]}")
+		else
+			@date = Time.now
+		end
+		@presences = Presence.where(:created_at => @date.all_day)
+		respond_with @presences.to_json
+	end
+
 end
