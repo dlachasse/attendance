@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Student Micro
+   ========================================================================== */
+
+$gray-darker:            lighten(#000, 13.5%) !default;
+$brand-primary:         #428bca !default;
+
+.student-micro {
+  margin: 0 0 30px;
+  text-align: center;
+
+  a {
+    color: $gray-darker;
+    display: block;
+    position: relative;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      .student-micro__name {
+        background: $brand-primary;
+        color: #fff;
+      }
+    }
+  }
+  img {
+    height: auto;
+    max-width: none;
+    width: 100%;
+  }
+}
+.student-micro__name {
+  background: #fff;
+  background: rgba(#fff, .5);
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: .5em;
+  position: absolute;
+  width: 100%;
+}

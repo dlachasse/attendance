@@ -2,14 +2,44 @@
 
 <div class="container">
   <div class="row">
-    <div ng-repeat="student in students" class="student col-xs-4 col-sm-3 col-md-2">
-      <a ui-sref="student({id: student.id})">
-        <img ng-src="student.avatar">
-        <div class="student__content">
-          <h4>{{ student.name }}</h4>
-          <p class="bg-success"><span class="glyphicon glyphicon-ok"></span> Attended</p>
+    <div class="col-xs-12 col-sm-4">
+      <div class="page-header">
+        <h1>{{ course.title }}</h1>
+      </div>
+      <p class="lead">{{ course.excerpt }}</p>
+      <p>Room: <strong>{{ course.room }}</strong></p>
+      <p>Period: <strong>{{ course.period }}</strong></p>
+      <div ng-bind-html="course.description"></div>
+      <hr>
+      <h3>Teacher</h3>
+      <div class="teacher-micro media">
+        <a ui-sref="user({id: course.teacher.id})" class="pull-left">
+          <img
+            ng-src="{{ course.teacher.avatar }}"
+            class="media-object img-rounded">
+        </a>
+        <div class="media-body">
+          <h4 class="media-heading">
+            <a ui-sref="user({id: course.teacher.id })">
+              {{ course.teacher.first_name + ' ' + course.teacher.last_name }}
+            </a>
+          </h4>
+          <a href="#">
+            <span class="glyphicon glyphicon-envelope"></span>
+            {{ course.teacher.email }}
+          </a>
         </div>
-      </a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <div class="row">
+        <div ng-repeat="student in course.students" class="student-micro col-xs-6 col-sm-4">
+          <a ui-sref="student({id: student.id})">
+            <img ng-src="{{ student.avatar }}">
+            <h4 class="student-micro__name">{{ student.first_name + ' ' + student.last_name }}</h4>
+          </a>
+        </div>
+      </div><!-- .row -->
     </div>
   </div>
 </div><!-- .container -->

@@ -64,8 +64,19 @@ angular.module('attendance')
   });
 
 angular.module('attendance')
-  .controller('ClassroomPeriodCtrl', function ($scope) {
+  .controller('ClassroomPeriodCtrl', function ($scope, $stateParams, $http) {
     $scope.message = 'Hello';
+
+    var id = $stateParams.id;
+
+    if (typeof id !== 'undefined') {
+      $http.get('/api/classroom_period/' + id)
+        .then(function (data) {
+          console.log(data.data);
+
+          $scope.course = data.data;
+        });
+    }
   });
 
 angular.module('attendance')
