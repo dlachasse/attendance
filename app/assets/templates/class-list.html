@@ -5,15 +5,17 @@
     <h1>Classes</h1>
   </div>
   <div class="row">
-    <div ng-repeat="period in periods" class="col-xs-12 col-sm-6 col-md-4">
+    <div ng-repeat="period in periods" class="class-item col-xs-12 col-sm-6 col-md-4">
       <a ui-sref="class.detail({id: period.id})">
-        <h2>{{ period.title }}</h2>
-        <p>Period <strong>{{ period.period }}</strong></p>
-        <p>Room: <strong>{{ period.room }}</strong></p>
+        <h2 class="class-item__name">{{ period.title }}</h2>
+        <ul class="list-unstyled">
+          <li>Period <strong>{{ period.period }}</strong></li>
+        </ul>
 
-        <div class="media">
-          <img ng-src="{{ period.teacher.avatar }}" class="media-object img-rounded">
+        <div class="teacher-micro media">
+          <img ng-src="{{ period.teacher.avatar }}" class="pull-left media-object img-rounded">
           <div class="media-body">
+            <small class="text-muted">Teacher:</small>
             <h4 class="media-heading">{{ period.teacher.first_name + ' ' + period.teacher.last_name }}</h4>
           </div>
         </div>
