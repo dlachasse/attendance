@@ -5,5 +5,3 @@ config/database.yml
 *.log
 .DS_Store
 tmp/*
-
-app/assets/javascripts/vendor/
