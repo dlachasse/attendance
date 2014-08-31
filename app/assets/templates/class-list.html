@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div ng-repeat="period in periods" class="col-xs-12 col-sm-6 col-md-4">
-      <a ui-sref="classroom-period({id: period.id})">
+      <a ui-sref="class.detail({id: period.id})">
         <h2>{{ period.title }}</h2>
         <p>Period <strong>{{ period.period }}</strong></p>
         <p>Room: <strong>{{ period.room }}</strong></p>

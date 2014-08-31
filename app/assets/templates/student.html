@@ -24,7 +24,7 @@
       </div>
 
       <div ng-repeat="course in courses">
-        <a ui-sref="classroom-period({id: course.id })">
+        <a ui-sref="class.detail({id: course.id })">
           <h2>{{ course.title }}</h2>
           <p>Period: <strong>{{ course.period }}</strong>
           <p>Course ID: <strong>{{ course.course_id }}</strong></p>

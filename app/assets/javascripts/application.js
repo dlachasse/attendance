@@ -24,15 +24,20 @@ angular.module('attendance', ['ngSanitize', 'ui.router', 'templates'])
         templateUrl: 'home.html',
         controller: 'HomeCtrl'
       })
-      .state('classroom-periods', {
-        url: '/classroom-periods',
-        templateUrl: 'classroom-periods.html',
-        controller: 'ClassroomPeriodsCtrl'
+      .state('class', {
+        abstract: true,
+        url: '/class',
+        template: '<ui-view />'
       })
-      .state('classroom-period', {
-        url: '/classroom-period/:id',
-        templateUrl: 'classroom-period.html',
-        controller: 'ClassroomPeriodCtrl'
+      .state('class.list', {
+        url: '',
+        templateUrl: 'class-list.html',
+        controller: 'ClassListCtrl'
+      })
+      .state('class.detail', {
+        url: '/:id',
+        templateUrl: 'class-detail.html',
+        controller: 'ClassDetailCtrl'
       })
       .state('users', {
         url: '/users',
@@ -56,7 +61,7 @@ angular.module('attendance')
   }]);
 
 angular.module('attendance')
-  .controller('ClassroomPeriodsCtrl', ['$scope', '$http', function ($scope, $http) {
+  .controller('ClassListCtrl', ['$scope', '$http', function ($scope, $http) {
     $http.get('/api/classroom_periods')
       .then(function (data) {
         $scope.periods = data.data;
@@ -64,7 +69,7 @@ angular.module('attendance')
   }]);
 
 angular.module('attendance')
-  .controller('ClassroomPeriodCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
+  .controller('ClassDetailCtrl', ['$scope', '$stateParams', '$http', function ($scope, $stateParams, $http) {
     $scope.message = 'Hello';
 
     var id = $stateParams.id;
