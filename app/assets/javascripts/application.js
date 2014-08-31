@@ -8,6 +8,10 @@
  * (https://github.com/pitr/angular-rails-templates)
  *= require angular-rails-templates
  *= require_tree ../templates
+ *
+ * Load Boostrap's JavaScripts
+ *= require jquery
+ *= require bootstrap-sprockets
  */
 
 'use strict';
