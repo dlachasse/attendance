@@ -3,12 +3,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4">
-      <img ng-src="student.avatar">
-      <h2>{{ student.name }}</h2>
-      <h5>Student</h5>
-      <a href="{{ student.email }}">
+      <img ng-src="{{ user.avatar }}">
+      <h2>{{ user.first_name + ' ' + user.last_name }}</h2>
+      <h5>{{ user.role }}</h5>
+      <a href="{{ user.email }}">
         <span class="glyphicon glyphicon-envelope"></span>
-        <strong>{{ student.email }}</strong>
+        <strong>{{ user.email }}</strong>
       </a>
     </div>
     <div class="col-xs-12 col-sm-8">
@@ -21,6 +21,15 @@
               Next
               <span class="glyphicon glyphicon-arrow-right"></span>
           </a>
+      </div>
+
+      <div ng-repeat="course in courses">
+        <a ui-sref="classroom-period({id: course.id })">
+          <h2>{{ course.title }}</h2>
+          <p>Period: <strong>{{ course.period }}</strong>
+          <p>Course ID: <strong>{{ course.course_id }}</strong></p>
+          <p>Room: <strong>{{ course.room }}</strong></p>
+        </a>
       </div>
     </div>
   </div>

@@ -1,0 +1,17 @@
+<div ng-include="'_navigation.html'"></div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>Users</h1>
+  </div>
+
+  <div class="row">
+    <div ng-repeat="user in users" class="col-xs-6 col-sm-4 col-md-3">
+      <a ui-sref="student({id: user.id })">
+        <img ng-src="{{ user.avatar }}">
+        <h4>{{ user.first_name + ' ' + user.last_name }}</h4>
+        <p>{{ user.role }}</p>
+      </a>
+    </div>
+  </div>
+</div><!-- .container -->
