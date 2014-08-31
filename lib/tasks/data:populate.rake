@@ -48,7 +48,7 @@ namespace :data do
 	end
 
 	desc "Delete duplicate records"
-	task dedupe: :environment
+	task dedupe: :environment do
 		Schedule.dedupe
 	end
 
