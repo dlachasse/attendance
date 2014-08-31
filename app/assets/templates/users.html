@@ -6,11 +6,13 @@
   </div>
 
   <div class="row">
-    <div ng-repeat="user in users" class="col-xs-6 col-sm-4 col-md-3">
+    <div ng-repeat="user in users" class="user col-xs-6 col-sm-4 col-md-3">
       <a ui-sref="student({id: user.id })">
         <img ng-src="{{ user.avatar }}">
-        <h4>{{ user.first_name + ' ' + user.last_name }}</h4>
-        <p>{{ user.role }}</p>
+        <div class="user__content">
+          <h4 class="user__name">{{ user.first_name + ' ' + user.last_name }}</h4>
+          <p class="user__role">{{ user.role }}</p>
+        </div>
       </a>
     </div>
   </div>
