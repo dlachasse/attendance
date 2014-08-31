@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Video
+   ========================================================================== */
+
+.video {
+  margin: -20px 0 0;
+  overflow: hidden;
+  position: relative;
+
+  video {
+    width: 100%;
+  }
+}
+.video__text {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  left: 0;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  h1 {
+    font-size: 300%;
+    text-shadow: 0 2px rgba(0, 0, 0, .5);
+
+    @media (min-width: 768px) {
+      font-size: 450%;
+    }
+  }
+}

@@ -12,9 +12,15 @@
  * Load Boostrap's JavaScripts
  *= require jquery
  *= require bootstrap-sprockets
+ *
+ * FitVids
+ *=require vendor/jquery.fitvids.js
  */
 
 'use strict';
+
+// Fitvids
+$('.video').fitVids();
 
 window.addEventListener('load', function() {
   FastClick.attach(document.body);
